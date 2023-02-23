@@ -8,7 +8,7 @@ console.log('apiUrl', github.context.apiUrl);
 console.log('graphUrl', github.context.graphqlUrl);
 console.log('issue', github.context.issue);
 console.log('job', github.context.job);
-console.log('payload', github.context.payload);
+console.log('payload', github.context.payload.comment);
 console.log('ref', github.context.ref);
 console.log('repo', github.context.repo);
 console.log('runId', github.context.runId);
