@@ -1,6 +1,8 @@
 name: slack integration test
 on:
-  push
+  pull_request:
+    types: [ opened, synchronize, reopened, edited ]
+    branches: [ "main" ]
 
 jobs:
   builds:
