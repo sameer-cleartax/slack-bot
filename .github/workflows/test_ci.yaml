@@ -1,8 +1,8 @@
 name: slack integration test
 on:
-  # pull_request:
-  #   types: [ opened, synchronize, reopened, edited ]
-  #   branches: [ "main" ]
+  pull_request:
+    types: [ opened, synchronize, reopened, edited ]
+    branches: [ "main" ]
   push:
     branches-ignore:
       - "main"
