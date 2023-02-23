@@ -22,7 +22,6 @@ var __importStar = (this && this.__importStar) || function (mod) {
     __setModuleDefault(result, mod);
     return result;
 };
-var _a;
 Object.defineProperty(exports, "__esModule", { value: true });
 const github = __importStar(require("@actions/github"));
 console.log('action', github.context.action);
@@ -31,7 +30,7 @@ console.log('apiUrl', github.context.apiUrl);
 console.log('graphUrl', github.context.graphqlUrl);
 console.log('issue', github.context.issue);
 console.log('job', github.context.job);
-console.log('payload', (_a = github.context.payload.pull_request) === null || _a === void 0 ? void 0 : _a.body);
+console.log('payload', github.context.payload.pull_request);
 console.log('ref', github.context.ref);
 console.log('repo', github.context.repo.owner);
 console.log('runId', github.context.runId);
