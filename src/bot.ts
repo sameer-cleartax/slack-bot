@@ -12,7 +12,8 @@ console.log('apiUrl', github.context.apiUrl);
 console.log('graphUrl', github.context.graphqlUrl);
 console.log('issue', github.context.issue);
 console.log('job', github.context.job);
-console.log('payload', github.context.payload);
+console.log('payload', github.context.payload.pull_request != null && github.context.payload.pull_request._link.comments);
+console.log('payload', github.context.payload.pull_request != null && github.context.payload.pull_request._link.commits);
 console.log('ref', github.context.ref);
 console.log('repo', github.context.repo.owner);
 console.log('runId', github.context.runId);
@@ -23,7 +24,7 @@ console.log('workflow', github.context.workflow);
 console.log('commits', github.context.payload.commits);
 
 // switch (github.context.eventName) {
-//     case EVENT.PULL_REQUEST: hello
+//     case EVENT.PULL_REQUEST:
 //         break;
 //     case EVENT.PULL_REQUEST_REVIEW:
 //         break;
