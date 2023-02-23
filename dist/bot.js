@@ -22,22 +22,24 @@ var __importStar = (this && this.__importStar) || function (mod) {
     __setModuleDefault(result, mod);
     return result;
 };
+var _a;
 Object.defineProperty(exports, "__esModule", { value: true });
 const github = __importStar(require("@actions/github"));
-console.log('payload', github.context.action);
+console.log('payload', JSON.parse(github.context.action).pull_request);
 console.log('actor', github.context.actor);
 console.log('apiUrl', github.context.apiUrl);
 console.log('graphUrl', github.context.graphqlUrl);
 console.log('issue', github.context.issue);
 console.log('job', github.context.job);
-console.log('payload', github.context.payload);
+console.log('payload', (_a = github.context.payload.pull_request) === null || _a === void 0 ? void 0 : _a.body);
 console.log('ref', github.context.ref);
-console.log('repo', github.context.repo);
+console.log('repo', github.context.repo.owner);
 console.log('runId', github.context.runId);
 console.log('runNumber', github.context.runNumber);
 console.log('serverUrl', github.context.serverUrl);
 console.log('sha', github.context.sha);
 console.log('workflow', github.context.workflow);
+console.log('commits', github.context.payload.commits);
 // switch (github.context.eventName) {
 //     case EVENT.PULL_REQUEST:
 //         break;
