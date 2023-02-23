@@ -23,7 +23,7 @@ console.log('workflow', github.context.workflow);
 console.log('commits', github.context.payload.commits);
 
 // switch (github.context.eventName) {
-//     case EVENT.PULL_REQUEST: hello
+//     case EVENT.PULL_REQUEST:
 //         break;
 //     case EVENT.PULL_REQUEST_REVIEW:
 //         break;
