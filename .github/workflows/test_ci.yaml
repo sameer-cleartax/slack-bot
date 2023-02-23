@@ -14,5 +14,5 @@ jobs:
           fetch-depth: 0
           ref: ${{ github.event.pull_request.head.ref }}
 
-      - name: trying my shit
+      - name: Trying my shit
         uses: sameer-cleartax/slack-bot@main
