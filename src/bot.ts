@@ -25,7 +25,7 @@ console.log('commits', github.context.payload.commits);
 
 // switch (github.context.eventName) { 
 //     case EVENT.PULL_REQUEST:   
-//         break;
+//         break; 
 //     case EVENT.PULL_REQUEST_REVIEW:
 //         break;
 //     case EVENT.PULL_REQUEST_REVIEW_COMMENT:
