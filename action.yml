@@ -1,0 +1,10 @@
+name: 'CI Slack Integration'
+description: 'Post github event to slack'
+author: sameer-cleartax
+inputs:
+  webhook:
+    description: 'slack webhook url'
+    required: true
+runs:
+  using: 'node16'
+  main: ./dist/bot.js
