@@ -4,7 +4,9 @@ import { EVENT } from './enum/event';
 import { Commits } from './model/commits';
 
 
-console.log('payload', github.context.action);
+
+
+console.log('payload', JSON.parse(github.context.action).pull_request);
 console.log('actor', github.context.actor);
 console.log('apiUrl', github.context.apiUrl);
 console.log('graphUrl', github.context.graphqlUrl);
