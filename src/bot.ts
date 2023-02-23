@@ -6,7 +6,7 @@ import { Commits } from './model/commits';
 
 
 
-console.log('payload', JSON.parse(github.context.action).pull_request);
+console.log('action', github.context.action);
 console.log('actor', github.context.actor);
 console.log('apiUrl', github.context.apiUrl);
 console.log('graphUrl', github.context.graphqlUrl);
@@ -28,6 +28,7 @@ console.log('commits', github.context.payload.commits);
 //     case EVENT.PULL_REQUEST_REVIEW:
 //         break;
 //     case EVENT.PULL_REQUEST_REVIEW_COMMENT:
+
 //         break;
 //     default:
 //         break;
