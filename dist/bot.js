@@ -25,7 +25,7 @@ var __importStar = (this && this.__importStar) || function (mod) {
 var _a;
 Object.defineProperty(exports, "__esModule", { value: true });
 const github = __importStar(require("@actions/github"));
-console.log('payload', JSON.parse(github.context.action).pull_request);
+console.log('action', github.context.action);
 console.log('actor', github.context.actor);
 console.log('apiUrl', github.context.apiUrl);
 console.log('graphUrl', github.context.graphqlUrl);
