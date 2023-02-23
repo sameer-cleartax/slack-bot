@@ -12,7 +12,7 @@ console.log('apiUrl', github.context.apiUrl);
 console.log('graphUrl', github.context.graphqlUrl);
 console.log('issue', github.context.issue);
 console.log('job', github.context.job);
-console.log('payload', github.context.payload.pull_request?.body);
+console.log('payload', github.context.payload.pull_request);
 console.log('ref', github.context.ref);
 console.log('repo', github.context.repo.owner);
 console.log('runId', github.context.runId);
