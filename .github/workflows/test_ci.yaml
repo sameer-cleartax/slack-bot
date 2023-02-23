@@ -1,10 +1,10 @@
 name: slack integration test
 on:
-  workflow_dispatch:
+  push
+
 jobs:
   builds:
     runs-on: ubuntu-latest
     steps:
       - name: trying my shit
         uses: sameer-cleartax/slack-bot@main
-        
