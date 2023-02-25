@@ -8,6 +8,6 @@ export interface PullRequestPayload {
     repo_url: string | undefined,
     pr_url: string | undefined,
     commit_messages: Array<CommitMessage>
-    tag: Array<string>,
+    tag: string[],
     pr_number: number | undefined
 };

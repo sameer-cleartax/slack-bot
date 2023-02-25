@@ -40,16 +40,16 @@ function getCommits(commitUrl) {
     return __awaiter(this, void 0, void 0, function* () {
         let message = yield (0, http_client_1.httpGet)(commitUrl);
         let result = [];
-        message.forEach(mes => {
+        message.forEach((mes) => {
             let commit = {
-                sha: '',
-                autor: '',
-                handler: '',
-                message: '',
-                html_url: '',
-                timestamp: new Date()
+                sha: "",
+                autor: "",
+                handler: "",
+                message: "",
+                html_url: "",
+                timestamp: new Date(),
             };
-            commit.sha = (mes.sha).slice(0, 10);
+            commit.sha = mes.sha.slice(0, 10);
             commit.autor = mes.commit.committer.name;
             commit.handler = mes.committer.login;
             commit.message = mes.commit.message;
@@ -60,10 +60,11 @@ function getCommits(commitUrl) {
         return result;
     });
 }
-function prService() {
+function prService(webhook, tag) {
     var _a, _b, _c, _d;
     return __awaiter(this, void 0, void 0, function* () {
-        let commit_url = github.context.payload.pull_request && github.context.payload.pull_request._links.commits.href;
+        let commit_url = github.context.payload.pull_request &&
+            github.context.payload.pull_request._links.commits.href;
         let commits = yield getCommits(commit_url);
         let pullRequestPayload = {
             action: github.context.payload.action,
@@ -74,10 +75,10 @@ function prService() {
             pr_url: (_c = github.context.payload.pull_request) === null || _c === void 0 ? void 0 : _c.html_url,
             commit_messages: commits,
             pr_number: (_d = github.context.payload.pull_request) === null || _d === void 0 ? void 0 : _d.number,
-            tag: []
+            tag: tag,
         };
         let message = (0, pullrequest_1.pullRequestTemplate)(pullRequestPayload);
-        console.log(message);
+        yield (0, http_client_1.httpPost)(webhook, message);
     });
 }
 exports.prService = prService;

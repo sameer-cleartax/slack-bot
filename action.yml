@@ -5,6 +5,9 @@ inputs:
   webhook:
     description: 'slack webhook url'
     required: true
+  tag:
+    description: 'tag slack group, enter comma separated slack id'
+    required: false
 runs:
   using: 'node16'
   main: ./dist/bot.js
