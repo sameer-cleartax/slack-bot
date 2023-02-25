@@ -3,7 +3,7 @@ import { prService } from "./service/pr.service";
 
 async function run() {
   try {
-    const webhook: string = core.getInput("webhook");
+    const webhook: string = core.getInput("webhook").trim();
     const tag: string[] = core.getInput("tag").split(",");
     prService(webhook, tag);
   } catch (error) {
