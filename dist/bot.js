@@ -46,3 +46,4 @@ function run() {
         }
     });
 }
+run();
