@@ -28,7 +28,7 @@ async function getCommits(commitUrl: string):Promise<any> {
 
 export async function prService():Promise<void>{
     let action:string | undefined = github.context.payload.action;
-    let created_by:string = github.context.payload.pull_request && github.context.payload.pull_request.head_commit.author.name;
+    // let created_by:string = github.context.payload.pull_request && github.context.payload.pull_request.head_commit.author.name;
     let pr_number:number | undefined = github.context.payload.pull_request?.number;
     let repo:string | undefined = github.context.payload.repository?.full_name;
     let repo_html:string | undefined = github.context.payload.repository?.html_url;
@@ -36,14 +36,15 @@ export async function prService():Promise<void>{
     // let commits:Array<CommitMessage> = await getCommits(commit_url);
     
     console.log("action", action);
-    console.log("created_by", created_by);
+    console.log("created_by", github.context.payload.pull_request);
+    // console.log("created_by", created_by);
     console.log("commit_url", commit_url);
     console.log("pr_number", pr_number);
     console.log("repo", repo);
     console.log("repo_hmlt", repo_html);
     // console.log("commits", commits);
 
-    
+
 
     // let url:string = 'https://api.github.com/repos/sameer-cleartax/slack-bot/pulls/10/commits';
     // let result:Array<CommitMessage> = await getCommits(url);

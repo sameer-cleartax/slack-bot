@@ -63,14 +63,15 @@ function prService() {
     var _a, _b, _c;
     return __awaiter(this, void 0, void 0, function* () {
         let action = github.context.payload.action;
-        let created_by = github.context.payload.pull_request && github.context.payload.pull_request.head_commit.author.name;
+        // let created_by:string = github.context.payload.pull_request && github.context.payload.pull_request.head_commit.author.name;
         let pr_number = (_a = github.context.payload.pull_request) === null || _a === void 0 ? void 0 : _a.number;
         let repo = (_b = github.context.payload.repository) === null || _b === void 0 ? void 0 : _b.full_name;
         let repo_html = (_c = github.context.payload.repository) === null || _c === void 0 ? void 0 : _c.html_url;
         let commit_url = github.context.payload.pull_request && github.context.payload.pull_request._links.commits;
         // let commits:Array<CommitMessage> = await getCommits(commit_url);
         console.log("action", action);
-        console.log("created_by", created_by);
+        console.log("created_by", github.context.payload.pull_request);
+        // console.log("created_by", created_by);
         console.log("commit_url", commit_url);
         console.log("pr_number", pr_number);
         console.log("repo", repo);
