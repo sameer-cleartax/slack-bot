@@ -45,5 +45,9 @@ export async function prService(webhook: string, tag: string[]): Promise<void> {
         tag: tag,
     };
     let message = pullRequestTemplate(pullRequestPayload);
-    await httpPost(webhook, message);
+    await httpPost(webhook, message).then(res => {
+        console.log("successfully posted the message to slack");
+    }).catch(err => {
+        console.error("error posting message to slack")
+    });
 }
