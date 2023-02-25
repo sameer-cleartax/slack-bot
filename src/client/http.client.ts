@@ -5,5 +5,6 @@ export async function httpGet(url:string):Promise<any> {
 }
 
 export async function httpPost(url:string, payload: string) {
+    console.log(url, payload);
     return (await axios.post(url, payload));
 }

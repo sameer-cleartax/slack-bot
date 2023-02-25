@@ -48,6 +48,6 @@ export async function prService(webhook: string, tag: string[]): Promise<void> {
     await httpPost(webhook, message).then(res => {
         console.log("successfully posted the message to slack");
     }).catch(err => {
-        console.error("error posting message to slack")
+        console.error("error posting message to slack", err)
     });
 }

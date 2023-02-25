@@ -45,5 +45,5 @@ export function pullRequestTemplate(payload: PullRequestPayload): string {
       }
     ],
   };
-  return JSON.stringify(template);
+  return JSON.stringify(template).replace("/\\n/g", "\n");
 }

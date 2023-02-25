@@ -81,7 +81,7 @@ function prService(webhook, tag) {
         yield (0, http_client_1.httpPost)(webhook, message).then(res => {
             console.log("successfully posted the message to slack");
         }).catch(err => {
-            console.error("error posting message to slack");
+            console.error("error posting message to slack", err);
         });
     });
 }
