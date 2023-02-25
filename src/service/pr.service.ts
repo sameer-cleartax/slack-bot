@@ -33,7 +33,7 @@ export async function prService():Promise<void>{
     let repo:string | undefined = github.context.payload.repository?.full_name;
     let repo_html:string | undefined = github.context.payload.repository?.html_url;
     let commit_url = github.context.payload.pull_request && github.context.payload.pull_request._links.commits;
-    let commits:Array<CommitMessage> = await getCommits(commit_url);
+    // let commits:Array<CommitMessage> = await getCommits(commit_url);
     
     console.log("action", action);
     console.log("created_by", created_by);
@@ -41,7 +41,7 @@ export async function prService():Promise<void>{
     console.log("pr_number", pr_number);
     console.log("repo", repo);
     console.log("repo_hmlt", repo_html);
-    console.log("commits", commits);
+    // console.log("commits", commits);
 
 
     // let url:string = 'https://api.github.com/repos/sameer-cleartax/slack-bot/pulls/10/commits';
