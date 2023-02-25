@@ -60,7 +60,7 @@ function getCommits(commitUrl) {
     });
 }
 function prService() {
-    var _a, _b, _c;
+    var _a, _b, _c, _d;
     return __awaiter(this, void 0, void 0, function* () {
         let action = github.context.payload.action;
         let created_by = github.context.actor;
@@ -74,6 +74,7 @@ function prService() {
         console.log("created_by", created_by);
         console.log("commit_url", commit_url);
         console.log("pr_number", pr_number);
+        console.log("pr_header", (_d = github.context.payload) === null || _d === void 0 ? void 0 : _d.head);
         console.log("repo", repo);
         console.log("repo_hmlt", repo_html);
         console.log("commits", commits);
