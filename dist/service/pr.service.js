@@ -60,21 +60,22 @@ function getCommits(commitUrl) {
     });
 }
 function prService() {
-    var _a, _b, _c, _d;
+    var _a, _b, _c, _d, _e;
     return __awaiter(this, void 0, void 0, function* () {
         let action = github.context.payload.action;
         let created_by = github.context.actor;
         let pr_number = (_a = github.context.payload.pull_request) === null || _a === void 0 ? void 0 : _a.number;
         let repo = (_b = github.context.payload.repository) === null || _b === void 0 ? void 0 : _b.full_name;
         let repo_html = (_c = github.context.payload.repository) === null || _c === void 0 ? void 0 : _c.html_url;
+        let pr_html = (_d = github.context.payload.pull_request) === null || _d === void 0 ? void 0 : _d.html_url;
         let commit_url = github.context.payload.pull_request && github.context.payload.pull_request._links.commits.href;
         let commits = yield getCommits(commit_url);
         console.log("action", action);
         console.log("created_by", created_by);
-        console.log("created_by", created_by);
+        console.log("pull_request_html", pr_html);
         console.log("commit_url", commit_url);
         console.log("pr_number", pr_number);
-        console.log("pr_header", (_d = github.context.payload) === null || _d === void 0 ? void 0 : _d.title);
+        console.log("pr_header", (_e = github.context.payload) === null || _e === void 0 ? void 0 : _e.title);
         console.log("repo", repo);
         console.log("repo_hmlt", repo_html);
         console.log("commits", commits);
