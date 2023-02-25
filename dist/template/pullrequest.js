@@ -30,7 +30,7 @@ function pullRequestTemplate(payload) {
                 type: "section",
                 text: {
                     type: "mrkdwn",
-                    text: `*#PR ${payload.pr_number}*: <${payload.commit_url}|${payload.commit_header}>`,
+                    text: `pull_request: <${payload.pr_url}| #${payload.pr_number}>`,
                 },
             },
             {

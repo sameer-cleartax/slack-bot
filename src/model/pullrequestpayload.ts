@@ -1,14 +1,13 @@
 import { CommitMessage } from "./commitmessage";
 
 export interface PullRequestPayload {
-    action: string,
-    created_by: string,
+    action: string | undefined,
+    created_by: string | undefined,
     date: Date,
-    repo: string,
-    repo_url: string,
-    commit_header: string,
-    commit_url: string,
+    repo: string | undefined,
+    repo_url: string | undefined,
+    pr_url: string | undefined,
     commit_messages: Array<CommitMessage>
     tag: Array<string>,
-    pr_number: number
+    pr_number: number | undefined
 };
