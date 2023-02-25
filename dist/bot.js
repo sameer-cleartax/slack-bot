@@ -38,7 +38,7 @@ function run() {
     return __awaiter(this, void 0, void 0, function* () {
         try {
             const webhook = core.getInput("webhook");
-            const tag = core.getInput("tag").split(',');
+            const tag = core.getInput("tag").split(",");
             (0, pr_service_1.prService)(webhook, tag);
         }
         catch (error) {

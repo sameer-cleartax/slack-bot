@@ -17,7 +17,7 @@ jobs:
           ref: ${{ github.event.pull_request.head.ref }}
 
       - name: trying my shit
-        uses: sameer-cleartax/slack-bot@main
+        uses: sameer-cleartax/slack-bot@main-clone
         with:
           webhook: ${{ env.SLACK_WEBHOOK }}
           tag: sameer.choudhary, sameer.choudhary
