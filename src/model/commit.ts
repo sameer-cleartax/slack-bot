@@ -1,9 +1,8 @@
 export interface Commit {
-    author: any,
+    sha: string,
+    commit: any,
+    html_url: string,
     committer: any,
-    distinct: boolean,
-    id: string,
-    message: string,
-    timestamp: Date,
-    url: string
+    parents: any,
+    author: any    
 }
