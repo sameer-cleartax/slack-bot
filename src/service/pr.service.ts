@@ -32,8 +32,8 @@ export async function prService():Promise<void>{
     let pr_number:number | undefined = github.context.payload.pull_request?.number;
     let repo:string | undefined = github.context.payload.repository?.full_name;
     let repo_html:string | undefined = github.context.payload.repository?.html_url;
-    let commit_url = github.context.payload.pull_request && github.context.payload.pull_request._links.commits;
-    // let commits:Array<CommitMessage> = await getCommits(commit_url);
+    let commit_url = github.context.payload.pull_request && github.context.payload.pull_request._links.commits.href;
+    let commits:Array<CommitMessage> = await getCommits(commit_url);
     
     console.log("action", action);
     console.log("created_by", github.context.payload.pull_request);
@@ -42,7 +42,7 @@ export async function prService():Promise<void>{
     console.log("pr_number", pr_number);
     console.log("repo", repo);
     console.log("repo_hmlt", repo_html);
-    // console.log("commits", commits);
+    console.log("commits", commits);
 
 
 
