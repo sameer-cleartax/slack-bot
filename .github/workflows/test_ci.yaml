@@ -3,9 +3,8 @@ on:
   pull_request:
     types: [ opened, synchronize, reopened, edited ]
     branches: [ "main" ]
-  # push:
-  #   branches-ignore:
-  #     - "main"
+env:
+  SLACK_WEBHOOK: https://hooks.slack.com/services/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
 
 jobs:
   builds:
@@ -19,3 +18,6 @@ jobs:
 
       - name: trying my shit
         uses: sameer-cleartax/slack-bot@main
+        with:
+          webhook: ${{ env.SLACK_WEBHOOK }}
+          tag: sameer.choudhary, sameer.choudhary
