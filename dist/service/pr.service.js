@@ -74,7 +74,7 @@ function prService() {
         console.log("created_by", created_by);
         console.log("commit_url", commit_url);
         console.log("pr_number", pr_number);
-        console.log("pr_header", (_d = github.context.payload) === null || _d === void 0 ? void 0 : _d.head);
+        console.log("pr_header", (_d = github.context.payload) === null || _d === void 0 ? void 0 : _d.title);
         console.log("repo", repo);
         console.log("repo_hmlt", repo_html);
         console.log("commits", commits);

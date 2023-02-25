@@ -40,11 +40,11 @@ export async function prService():Promise<void>{
     console.log("created_by", created_by);
     console.log("commit_url", commit_url);
     console.log("pr_number", pr_number);
-    console.log("pr_header", github.context.payload?.head);
+    console.log("pr_header", github.context.payload?.title);
     console.log("repo", repo);
     console.log("repo_hmlt", repo_html);
     console.log("commits", commits);
-    
+
 
 
     
