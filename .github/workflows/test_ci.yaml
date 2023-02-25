@@ -4,7 +4,7 @@ on:
     types: [ opened, synchronize, reopened, edited ]
     branches: [ "main" ]
 env:
-  SLACK_WEBHOOK: https://hooks.slack.com/services/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
+  SLACK_WEBHOOK: https://hooks.slack.com/services/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
 
 jobs:
   builds:
