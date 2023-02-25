@@ -22,7 +22,6 @@ function httpGet(url) {
 exports.httpGet = httpGet;
 function httpPost(url, payload) {
     return __awaiter(this, void 0, void 0, function* () {
-        console.log(url, payload);
         return (yield axios_1.default.post(url, payload));
     });
 }

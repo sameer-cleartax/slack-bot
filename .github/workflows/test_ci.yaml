@@ -4,7 +4,7 @@ on:
     types: [ opened, synchronize, reopened, edited ]
     branches: [ "main" ]
 env:
-  SLACK_WEBHOOK: https://hooks.slack.com/services/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
+  SLACK_WEBHOOK: https://hooks.slack.com/services/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
 
 jobs:
   builds:
@@ -20,4 +20,4 @@ jobs:
         uses: sameer-cleartax/slack-bot@main-clone
         with:
           webhook: ${{ env.SLACK_WEBHOOK }}
-          tag: sameer.choudhary, sameer.choudhary
+          tag: sameer.choudhary,sameer.choudhary

@@ -44,6 +44,6 @@ function pullRequestTemplate(payload) {
             }
         ],
     };
-    return JSON.stringify(template);
+    return JSON.stringify(template).replace("/\\n/g", "\n");
 }
 exports.pullRequestTemplate = pullRequestTemplate;
