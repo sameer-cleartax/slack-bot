@@ -1,30 +1,48 @@
 "use strict";
+var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    var desc = Object.getOwnPropertyDescriptor(m, k);
+    if (!desc || ("get" in desc ? !m.__esModule : desc.writable || desc.configurable)) {
+      desc = { enumerable: true, get: function() { return m[k]; } };
+    }
+    Object.defineProperty(o, k2, desc);
+}) : (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    o[k2] = m[k];
+}));
+var __setModuleDefault = (this && this.__setModuleDefault) || (Object.create ? (function(o, v) {
+    Object.defineProperty(o, "default", { enumerable: true, value: v });
+}) : function(o, v) {
+    o["default"] = v;
+});
+var __importStar = (this && this.__importStar) || function (mod) {
+    if (mod && mod.__esModule) return mod;
+    var result = {};
+    if (mod != null) for (var k in mod) if (k !== "default" && Object.prototype.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);
+    __setModuleDefault(result, mod);
+    return result;
+};
+var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
+    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
+    return new (P || (P = Promise))(function (resolve, reject) {
+        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
+        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
+        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
+        step((generator = generator.apply(thisArg, _arguments || [])).next());
+    });
+};
 Object.defineProperty(exports, "__esModule", { value: true });
+const core = __importStar(require("@actions/core"));
 const pr_service_1 = require("./service/pr.service");
-(0, pr_service_1.prService)();
-// console.log('action', github.context.action);
-// console.log('actor', github.context.actor);
-// console.log('apiUrl', github.context.apiUrl);
-// console.log('graphUrl', github.context.graphqlUrl);
-// console.log('issue', github.context.issue);
-// console.log('job', github.context.job);
-// console.log('payload', github.context.payload.pull_request && github.context.payload.pull_request._links.comments);
-// console.log('payload', github.context.payload.pull_request && github.context.payload.pull_request._links.commits);
-// console.log('ref', github.context.ref);
-// console.log('repo', github.context.repo.owner);
-// console.log('runId', github.context.runId);
-// console.log('runNumber', github.context.runNumber);
-// console.log('serverUrl', github.context.serverUrl);
-// console.log('sha', github.context.sha);
-// console.log('workflow', github.context.workflow);
-// console.log('commits', github.context.payload.commits);
-// switch (github.context.eventName) { 
-//     case EVENT.PULL_REQUEST:   
-//         break; 
-//     case EVENT.PULL_REQUEST_REVIEW:
-//         break;
-//     case EVENT.PULL_REQUEST_REVIEW_COMMENT:
-//         break;
-//     default:
-//         break;
-// }
+function run() {
+    return __awaiter(this, void 0, void 0, function* () {
+        try {
+            const webhook = core.getInput("webhook");
+            const tag = core.getInput("tag").split(',');
+            (0, pr_service_1.prService)(webhook, tag);
+        }
+        catch (error) {
+            console.error(error);
+        }
+    });
+}
